@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EULE Institute | Corsi Online Certificati con Mentor Personale</title>
+  <meta name="description" content="Corsi professionali 100% online con mentor personale, certificazione internazionale e supporto al placement. Dal 2016. UX/UI Design, Interior Design, Project Management e altro.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="EULE Institute | Corsi Online Certificati con Mentor Personale">
+  <meta property="og:description" content="Corsi professionali 100% online con mentor personale e certificazione internazionale. Dal 2016.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://euleinstitute.com">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'deep-blue': '#203e5f',
+            'deep-blue-dark': '#1a3350',
+            'golden': '#ffc53a',
+            'golden-dark': '#e6ad2e',
+            'teal': '#248f8f',
+            'teal-dark': '#1d7373',
+            'warm-white': '#fafaf8',
+          },
+          fontFamily: {
+            heading: ['DM Sans', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'DM Sans', sans-serif; }
+
+    /* Logo carousel */
+    @keyframes scroll-logos {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .logo-track {
+      animation: scroll-logos 30s linear infinite;
+    }
+    .logo-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Header shadow on scroll */
+    .header-scrolled {
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    }
+
+    /* FAQ details animation */
+    details summary {
+      list-style: none;
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    details[open] summary .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-chevron {
+      transition: transform 0.2s ease;
+    }
+
+    /* Scroll animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-700 antialiased">
+
+  <!-- ============================================ -->
+  <!-- HEADER -->
+  <!-- ============================================ -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-18">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 shrink-0">
+          <img src="assets/logo.png" alt="EULE Institute - European Learning Institute" class="h-10 w-auto">
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="#corsi" class="text-sm font-medium text-gray-600 hover:text-deep-blue transition-colors">Corsi</a>
+          <a href="#metodo" class="text-sm font-medium text-gray-600 hover:text-deep-blue transition-colors">Metodo</a>
+          <a href="#testimonianze" class="text-sm font-medium text-gray-600 hover:text-deep-blue transition-colors">Testimonianze</a>
+          <a href="#faq" class="text-sm font-medium text-gray-600 hover:text-deep-blue transition-colors">FAQ</a>
+          <a href="#contatti" class="text-sm font-medium text-gray-600 hover:text-deep-blue transition-colors">Contatti</a>
+        </nav>
+
+        <!-- Desktop CTA -->
+        <a href="#contatti" class="hidden lg:inline-flex items-center gap-2 bg-teal hover:bg-teal-dark text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
+          Prenota una Consulenza
+        </a>
+
+        <!-- Mobile Hamburger -->
+        <button id="menu-toggle" class="lg:hidden p-2 -mr-2 text-gray-600 hover:text-deep-blue" aria-label="Menu">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#corsi" class="block text-sm font-medium text-gray-600 hover:text-deep-blue py-2">Corsi</a>
+        <a href="#metodo" class="block text-sm font-medium text-gray-600 hover:text-deep-blue py-2">Metodo</a>
+        <a href="#testimonianze" class="block text-sm font-medium text-gray-600 hover:text-deep-blue py-2">Testimonianze</a>
+        <a href="#faq" class="block text-sm font-medium text-gray-600 hover:text-deep-blue py-2">FAQ</a>
+        <a href="#contatti" class="block text-sm font-medium text-gray-600 hover:text-deep-blue py-2">Contatti</a>
+        <a href="#contatti" class="block bg-teal hover:bg-teal-dark text-white text-sm font-semibold px-5 py-2.5 rounded-lg text-center transition-colors mt-2">
+          Prenota una Consulenza
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ============================================ -->
+  <!-- HERO -->
+  <!-- ============================================ -->
+  <section class="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-white to-warm-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+        <!-- Text -->
+        <div class="lg:col-span-3 fade-up">
+          <div class="inline-flex items-center gap-2 bg-golden/15 text-deep-blue text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+            <svg class="w-4 h-4 text-golden" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            Dal 2016 &middot; Leader in Europa
+          </div>
+
+          <h1 class="font-heading font-extrabold text-deep-blue text-4xl sm:text-5xl lg:text-[3.5rem] leading-tight tracking-tight mb-6">
+            Cambia Carriera con una <span class="text-teal">Certificazione Europea</span>
+          </h1>
+
+          <p class="text-lg text-gray-600 leading-relaxed mb-8 max-w-xl">
+            Corsi professionali 100% online con mentor personale, certificazione internazionale e supporto al placement. Ideale per chi lavora e ha poco tempo.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a href="#corsi" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold px-7 py-3.5 rounded-xl transition-colors text-base">
+              Esplora i Corsi
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <a href="#metodo" class="inline-flex items-center justify-center gap-2 border-2 border-deep-blue/20 hover:border-deep-blue/40 text-deep-blue font-semibold px-7 py-3.5 rounded-xl transition-colors text-base">
+              Scopri il Metodo EULE
+            </a>
+          </div>
+
+          <!-- Social Proof Strip -->
+          <div class="flex flex-wrap items-center gap-6 text-sm text-gray-500">
+            <div class="flex items-center gap-1.5">
+              <span class="text-deep-blue font-bold text-lg">9.000+</span>
+              <span>studenti</span>
+            </div>
+            <div class="w-px h-5 bg-gray-300 hidden sm:block"></div>
+            <div class="flex items-center gap-1.5">
+              <div class="flex text-golden">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="text-deep-blue font-bold text-lg">4.8</span>
+              <span>/ 5 rating</span>
+            </div>
+            <div class="w-px h-5 bg-gray-300 hidden sm:block"></div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-deep-blue font-bold text-lg">150+</span>
+              <span>aziende partner</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="lg:col-span-2 fade-up">
+          <img src="assets/group-hero.png" alt="Studentessa laureata EULE Institute con dashboard corsi, video call mentor e progressi" class="w-full max-w-md lg:max-w-none mx-auto drop-shadow-2xl" width="695" height="672">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- TRUST BAR / SOCIAL PROOF -->
+  <!-- ============================================ -->
+  <section class="py-14 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 fade-up">
+        <div class="text-center">
+          <p class="font-heading font-extrabold text-4xl text-deep-blue">9.000+</p>
+          <p class="text-gray-500 mt-1">Studenti Formati</p>
+        </div>
+        <div class="text-center">
+          <div class="flex items-center justify-center gap-2">
+            <p class="font-heading font-extrabold text-4xl text-deep-blue">4.8</p>
+            <div class="flex text-golden">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+          </div>
+          <p class="text-gray-500 mt-1">Valutazione Media</p>
+        </div>
+        <div class="text-center">
+          <p class="font-heading font-extrabold text-4xl text-deep-blue">150+</p>
+          <p class="text-gray-500 mt-1">Aziende Partner</p>
+        </div>
+      </div>
+
+      <!-- Trustpilot Badge -->
+      <div class="flex justify-center mb-12 fade-up">
+        <a href="https://it.trustpilot.com/review/corsoux.it" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-4 bg-deep-blue rounded-xl px-6 py-3 hover:bg-deep-blue-dark transition-colors">
+          <!-- 5 Trustpilot green stars -->
+          <div class="flex gap-1">
+            <div class="w-7 h-7 bg-[#00b67a] rounded flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="w-7 h-7 bg-[#00b67a] rounded flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="w-7 h-7 bg-[#00b67a] rounded flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="w-7 h-7 bg-[#00b67a] rounded flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="w-7 h-7 bg-[#00b67a] rounded flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+          </div>
+          <!-- Trustpilot logo -->
+          <div class="flex items-center gap-1.5">
+            <svg class="w-5 h-5 text-[#00b67a]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span class="text-white font-heading font-bold text-lg tracking-tight">Trustpilot</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Logo Carousel -->
+      <div class="fade-up">
+        <p class="text-center text-sm text-gray-400 mb-6">I nostri studenti lavorano presso</p>
+        <div class="overflow-hidden">
+          <div class="logo-track flex items-center gap-16 whitespace-nowrap" style="width: max-content;">
+            <!-- Duplicate set for infinite scroll -->
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Accenture</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Deloitte</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">IBM</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Reply</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Capgemini</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">McKinsey</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">NTT Data</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Bain</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">SAP</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Amazon</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Google</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Meta</span>
+            <!-- Duplicate -->
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Accenture</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Deloitte</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">IBM</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Reply</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Capgemini</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">McKinsey</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">NTT Data</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Bain</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">SAP</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Amazon</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Google</span>
+            <span class="text-gray-300 font-heading font-bold text-xl tracking-wider">Meta</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- COURSE CATALOG -->
+  <!-- ============================================ -->
+  <section id="corsi" class="py-20 bg-white scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Header: Banner sx + Titolo/Tabs dx -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12 fade-up">
+        <!-- Banner certificazione a sinistra -->
+        <a href="#contatti" class="block overflow-hidden rounded-2xl hover:shadow-lg transition-shadow">
+          <img src="assets/banner-certificazione.png" alt="Scegli il tuo percorso e ottieni la certificazione EULE Institute" class="w-full h-auto" loading="lazy">
+        </a>
+        <!-- Titolo + descrizione + tabs a destra -->
+        <div>
+          <h2 class="font-heading font-extrabold text-deep-blue text-3xl sm:text-4xl mb-3">I Nostri Percorsi Formativi</h2>
+          <p class="text-gray-500 text-lg mb-6">Scegli il percorso giusto per la tua carriera. Ogni corso include mentor personale, certificazione e accesso a vita.</p>
+          <div class="flex flex-wrap gap-3" role="tablist">
+            <button class="tab-btn active bg-deep-blue text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all" data-track="all">
+              Tutti i Corsi
+            </button>
+            <button class="tab-btn bg-gray-100 text-gray-600 hover:bg-gray-200 font-semibold text-sm px-5 py-2.5 rounded-full transition-all" data-track="design">
+              Design
+            </button>
+            <button class="tab-btn bg-gray-100 text-gray-600 hover:bg-gray-200 font-semibold text-sm px-5 py-2.5 rounded-full transition-all" data-track="it">
+              IT
+            </button>
+            <button class="tab-btn bg-gray-100 text-gray-600 hover:bg-gray-200 font-semibold text-sm px-5 py-2.5 rounded-full transition-all" data-track="architettura">
+              Architettura
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Grid -->
+      <!-- Course Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="course-grid">
+
+        <!-- User Research -->
+        <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="design">
+          <img src="assets/corso-user-research.png" alt="Corso User Research" class="w-full h-auto" loading="lazy">
+          <div class="p-5 flex flex-col flex-1">
+            <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
+            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">User Research Design</h4>
+            <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Impara a condurre ricerche utente, interviste, test di usabilita' e analisi dei dati per progettare prodotti centrati sull'utente.</p>
+            <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
+              <span>32 lezioni &middot; 10 esercizi</span>
+              <span class="font-bold text-deep-blue text-sm">200+ ore</span>
+            </div>
+            <a href="https://master.euleinstitute.com/courses/user-research" target="_blank" rel="noopener" class="text-teal hover:text-teal-dark text-sm font-medium transition-colors mb-3 inline-block">Scopri il Programma &rarr;</a>
+            <a href="https://master.euleinstitute.com/courses/user-research?et=free_trial" target="_blank" rel="noopener" class="block text-center bg-teal hover:bg-teal-dark text-white font-semibold text-sm py-3 rounded-xl transition-colors">
+              Fai la Prova Gratuita
+            </a>
+          </div>
+        </div>
+
+        <!-- Interaction Design -->
+        <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="design">
+          <img src="assets/corso-interaction-design.png" alt="Corso Interaction Design" class="w-full h-auto" loading="lazy">
+          <div class="p-5 flex flex-col flex-1">
+            <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
+            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Interaction Design</h4>
+            <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Card sorting, sitemap, wireframe e prototipazione. Impara a progettare flussi e interazioni efficaci per web e mobile.</p>
+            <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
+              <span>18 lezioni &middot; 7 esercizi</span>
+              <span class="font-bold text-deep-blue text-sm">200+ ore</span>
+            </div>
+            <a href="https://master.euleinstitute.com/courses/interaction-design" target="_blank" rel="noopener" class="text-teal hover:text-teal-dark text-sm font-medium transition-colors mb-3 inline-block">Scopri il Programma &rarr;</a>
+            <a href="https://master.euleinstitute.com/courses/interaction-design?et=free_trial" target="_blank" rel="noopener" class="block text-center bg-teal hover:bg-teal-dark text-white font-semibold text-sm py-3 rounded-xl transition-colors">
+              Fai la Prova Gratuita
+            </a>
+          </div>
+        </div>
+
+        <!-- Visual / UI Design -->
+        <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="design">
+          <img src="assets/corso-visual-ui.png" alt="Corso Visual e UI Design" class="w-full h-auto" loading="lazy">
+          <div class="p-5 flex flex-col flex-1">
+            <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
+            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Visual e UI Design</h4>
+            <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Tipografia, colori, layout e design system. Crea interfacce belle e funzionali per app e siti web.</p>
+            <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
+              <span>34 lezioni &middot; 9 esercizi</span>
+              <span class="font-bold text-deep-blue text-sm">200+ ore</span>
+            </div>
+            <a href="https://master.euleinstitute.com/courses/visual-design" target="_blank" rel="noopener" class="text-teal hover:text-teal-dark text-sm font-medium transition-colors mb-3 inline-block">Scopri il Programma &rarr;</a>
+            <a href="https://master.euleinstitute.com/courses/visual-design?et=free_trial" target="_blank" rel="noopener" class="block text-center bg-teal hover:bg-teal-dark text-white font-semibold text-sm py-3 rounded-xl transition-colors">
+              Fai la Prova Gratuita
+            </a>
+          </div>
+        </div>
+
+        <!-- UX Writing -->
+        <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="design">
+          <img src="assets/corso-ux-writing.png" alt="Corso UX Writing" class="w-full h-auto" loading="lazy">
+          <div class="p-5 flex flex-col flex-1">
+            <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
+            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">UX Writing &amp; Microcopy</h4>
+            <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Scrivi testi per interfacce digitali che guidano l'utente. Microcopy, tone of voice e content strategy.</p>
+            <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
+              <span>42 lezioni &middot; 10 esercizi</span>
+              <span class="font-bold text-deep-blue text-sm">200+ ore</span>
+            </div>
+            <a href="https://master.euleinstitute.com/courses/ux-writing" target="_blank" rel="noopener" class="text-teal hover:text-teal-dark text-sm font-medium transition-colors mb-3 inline-block">Scopri il Programma &rarr;</a>
+            <a href="https://master.euleinstitute.com/courses/ux-writing?et=free_trial" target="_blank" rel="noopener" class="block text-center bg-teal hover:bg-teal-dark text-white font-semibold text-sm py-3 rounded-xl transition-colors">
+              Fai la Prova Gratuita
+            </a>
+          </div>
+        </div>
+
+        <!-- Figma -->
+        <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="design">
+          <img src="assets/corso-figma.png" alt="Corso Figma per UI Designer" class="w-full h-auto" loading="lazy">
+          <div class="p-5 flex flex-col flex-1">
+            <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
+            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Figma per UI Designer</h4>
+            <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Padroneggia Figma: componenti, auto-layout, prototipi interattivi e collaborazione in team.</p>
+            <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
+              <span>56 lezioni &middot; 12 esercizi</span>
+              <span class="font-bold text-deep-blue text-sm">On-demand</span>
+            </div>
+            <a href="https://master.euleinstitute.com/courses/learn-figma-tutorial" target="_blank" rel="noopener" class="text-teal hover:text-teal-dark text-sm font-medium transition-colors mb-3 inline-block">Scopri il Programma &rarr;</a>
+            <a href="https://master.euleinstitute.com/courses/learn-figma-tutorial?et=free_trial" target="_blank" rel="noopener" class="block text-center bg-teal hover:bg-teal-dark text-white font-semibold text-sm py-3 rounded-xl transition-colors">
+              Fai la Prova Gratuita
+            </a>
+          </div>
+        </div>
+
+        <!-- HTML & CSS -->
+        <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="it">
+          <img src="assets/html-css.png" alt="Corso HTML e CSS per Webdesign" class="w-full h-auto" loading="lazy">
+          <div class="p-5 flex flex-col flex-1">
+            <span class="inline-block text-xs font-semibold text-teal bg-teal/10 px-3 py-1 rounded-full w-fit mb-3">Percorso IT</span>
+            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">HTML e CSS per Webdesign</h4>
+            <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Le basi dello sviluppo web: HTML semantico, CSS moderno, responsive design e layout con Flexbox e Grid.</p>
+            <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
+              <span>56 lezioni &middot; 12 esercizi</span>
+              <span class="font-bold text-deep-blue text-sm">200+ ore</span>
+            </div>
+            <a href="https://master.euleinstitute.com/courses/html-css" target="_blank" rel="noopener" class="text-teal hover:text-teal-dark text-sm font-medium transition-colors mb-3 inline-block">Scopri il Programma &rarr;</a>
+            <a href="https://master.euleinstitute.com/courses/html-css?et=free_trial" target="_blank" rel="noopener" class="block text-center bg-teal hover:bg-teal-dark text-white font-semibold text-sm py-3 rounded-xl transition-colors">
+              Fai la Prova Gratuita
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Management -->
+        <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="it">
+          <img src="assets/management.png" alt="Corso Project Management" class="w-full h-auto" loading="lazy">
+          <div class="p-5 flex flex-col flex-1">
+            <span class="inline-block text-xs font-semibold text-teal bg-teal/10 px-3 py-1 rounded-full w-fit mb-3">Percorso IT</span>
+            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Project Management</h4>
+            <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Metodologie Agile, Scrum e Waterfall. Gestisci progetti digitali dalla pianificazione alla consegna.</p>
+            <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
+              <span>56 lezioni &middot; 12 esercizi</span>
+              <span class="font-bold text-deep-blue text-sm">200+ ore</span>
+            </div>
+            <a href="https://master.euleinstitute.com/courses/project-management" target="_blank" rel="noopener" class="text-teal hover:text-teal-dark text-sm font-medium transition-colors mb-3 inline-block">Scopri il Programma &rarr;</a>
+            <a href="https://master.euleinstitute.com/courses/project-management?et=free_trial" target="_blank" rel="noopener" class="block text-center bg-teal hover:bg-teal-dark text-white font-semibold text-sm py-3 rounded-xl transition-colors">
+              Fai la Prova Gratuita
+            </a>
+          </div>
+        </div>
+
+        <!-- Interior Design -->
+        <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="architettura">
+          <img src="assets/interior-design-1.png" alt="Corso Interior Design Online" class="w-full h-auto" loading="lazy">
+          <div class="p-5 flex flex-col flex-1">
+            <span class="inline-block text-xs font-semibold text-deep-blue bg-deep-blue/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Architettura</span>
+            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Interior Design Online</h4>
+            <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Progettazione d'interni dalla teoria alla pratica. Render 3D, materiali, colori e spazi funzionali.</p>
+            <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
+              <span>Corso completo</span>
+              <span class="font-bold text-deep-blue text-sm">200+ ore</span>
+            </div>
+            <a href="https://master.euleinstitute.com/courses/interior-design" target="_blank" rel="noopener" class="text-teal hover:text-teal-dark text-sm font-medium transition-colors mb-3 inline-block">Scopri il Programma &rarr;</a>
+            <a href="https://master.euleinstitute.com/courses/interior-design?et=free_trial" target="_blank" rel="noopener" class="block text-center bg-teal hover:bg-teal-dark text-white font-semibold text-sm py-3 rounded-xl transition-colors">
+              Fai la Prova Gratuita
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- IL METODO EULE -->
+  <!-- ============================================ -->
+  <section id="metodo" class="py-20 bg-warm-white scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 fade-up">
+        <h2 class="font-heading font-extrabold text-deep-blue text-3xl sm:text-4xl mb-4">Il Metodo EULE</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Ecco perche' oltre 9.000 professionisti ci hanno scelto per cambiare carriera.</p>
+      </div>
+
+      <!-- 2 Column Layout: Mentor+Pratica (wide) sx | Certificazione (narrow) dx -->
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-12 fade-up">
+
+        <!-- Colonna sinistra (3/5): 2 card con layout testo sx + immagine dx -->
+        <div class="lg:col-span-3 flex flex-col gap-6">
+
+          <!-- Mentor Personale -->
+          <div class="bg-white rounded-2xl shadow-sm flex-1 p-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 h-full">
+              <div class="flex flex-col justify-center">
+                <span class="inline-block text-xs font-semibold text-teal bg-teal/10 px-3 py-1 rounded-full w-fit mb-3">Il Vero Valore del Corso</span>
+                <h3 class="font-heading font-extrabold text-deep-blue text-2xl mb-3">Mentor Personale</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Un Mentor Senior a tua disposizione ti aiutera' durante il corso con <strong class="text-deep-blue">chiamate Skype illimitate</strong> private (non di gruppo) e con le <strong class="text-deep-blue">video correzioni degli esercizi</strong>.</p>
+              </div>
+              <div class="rounded-xl overflow-hidden flex items-center">
+                <img src="assets/mentoring.avif" alt="Sessione di mentoring online con mentor EULE Institute" class="w-full h-auto rounded-xl" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <!-- Tanta Pratica -->
+          <div class="bg-white rounded-2xl shadow-sm flex-1 p-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 h-full">
+              <div class="flex flex-col justify-center">
+                <span class="inline-block text-xs font-semibold text-teal bg-teal/10 px-3 py-1 rounded-full w-fit mb-3">Costruisci il Portfolio</span>
+                <h3 class="font-heading font-extrabold text-deep-blue text-2xl mb-3">Tanta Pratica</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-2">Con l'aiuto dei Mentor, svilupperai un <strong class="text-deep-blue">progetto reale da zero</strong>, anche un progetto aziendale.</p>
+                <p class="text-gray-400 text-xs italic leading-relaxed">200 ore tra lezioni scritte, video ed esercitazioni fruibili subito dopo l'iscrizione al corso.</p>
+              </div>
+              <div class="rounded-xl overflow-hidden flex items-center">
+                <img src="assets/tanta-pratica.avif" alt="Studente che lavora su un progetto Figma" class="w-full h-auto rounded-xl" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Colonna destra (2/5): Certificazione compatta -->
+        <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col">
+          <div class="p-6 pb-3">
+            <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full mb-3">Riconosciuta all'Estero</span>
+            <h3 class="font-heading font-extrabold text-deep-blue text-xl mb-2">Certificazione</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-3">Se passerai tutti gli esami, riceverai un <strong class="text-deep-blue">certificato di qualita'</strong> firmato e garantito dal tuo mentor.</p>
+            <div class="space-y-2 mb-3">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-teal/10 rounded-md flex items-center justify-center shrink-0">
+                  <svg class="w-3 h-3 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <span class="text-deep-blue font-semibold text-xs">Certificazione Internazionale</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-golden/10 rounded-md flex items-center justify-center shrink-0">
+                  <svg class="w-3 h-3 text-golden-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                </div>
+                <span class="text-deep-blue font-semibold text-xs">Firma e Referenza del Mentor</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 pb-4 flex-1 flex items-end">
+            <img src="assets/certificato.jpg" alt="Certificato EULE Institute - Certificate of Excellence" class="w-full h-auto rounded-lg border border-gray-100" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom strip: 4 value props -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10 fade-up">
+        <div class="bg-white rounded-xl p-5 shadow-sm text-center">
+          <div class="w-10 h-10 bg-golden/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+            <svg class="w-5 h-5 text-golden-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h4 class="font-heading font-bold text-deep-blue text-sm mb-1">100% Online</h4>
+          <p class="text-gray-400 text-xs">Studia ai tuoi tempi, accesso a vita</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 shadow-sm text-center">
+          <div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+            <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h4 class="font-heading font-bold text-deep-blue text-sm mb-1">Placement</h4>
+          <p class="text-gray-400 text-xs">150+ aziende partner, supporto CV</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 shadow-sm text-center">
+          <div class="w-10 h-10 bg-golden/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+            <svg class="w-5 h-5 text-golden-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h4 class="font-heading font-bold text-deep-blue text-sm mb-1">9.000+ Studenti</h4>
+          <p class="text-gray-400 text-xs">Community attiva dal 2016</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 shadow-sm text-center">
+          <div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+            <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+          </div>
+          <h4 class="font-heading font-bold text-deep-blue text-sm mb-1">4.8/5 Rating</h4>
+          <p class="text-gray-400 text-xs">Valutazione media Trustpilot</p>
+        </div>
+      </div>
+
+      <div class="text-center fade-up">
+        <a href="#contatti" class="inline-flex items-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold px-7 py-3.5 rounded-xl transition-colors">
+          Prenota una Chiamata con un Mentor
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- TESTIMONIANZE -->
+  <!-- ============================================ -->
+  <section id="testimonianze" class="py-20 bg-deep-blue scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 fade-up">
+        <h2 class="font-heading font-extrabold text-white text-3xl sm:text-4xl mb-4">Le Storie dei Nostri Studenti</h2>
+        <p class="text-gray-300 text-lg max-w-2xl mx-auto">Professionisti come te che hanno cambiato carriera grazie a EULE Institute.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-up">
+        <!-- Testimonial 1 -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <div class="flex text-golden mb-4">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-white/90 leading-relaxed mb-6">&ldquo;Dopo 6 mesi con EULE ho ottenuto la certificazione e in 2 settimane ho trovato il mio primo lavoro come UX Designer. Il mentor e' stato fondamentale.&rdquo;</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-teal/30 rounded-full flex items-center justify-center text-white font-bold text-sm">MR</div>
+            <div>
+              <p class="text-white font-semibold text-sm">Marco R.</p>
+              <p class="text-gray-400 text-xs">Da Impiegato a UX Designer</p>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10">
+            <span class="text-xs text-golden font-medium">Corso: UX/UI Design</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <div class="flex text-golden mb-4">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-white/90 leading-relaxed mb-6">&ldquo;Lavoravo come architetto ma volevo specializzarmi in interni. Il corso di Interior Design mi ha dato le competenze pratiche e il portfolio che mi serviva.&rdquo;</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-golden/30 rounded-full flex items-center justify-center text-white font-bold text-sm">SB</div>
+            <div>
+              <p class="text-white font-semibold text-sm">Sara B.</p>
+              <p class="text-gray-400 text-xs">Da Architetto a Interior Designer</p>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10">
+            <span class="text-xs text-golden font-medium">Corso: Interior Design</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <div class="flex text-golden mb-4">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-white/90 leading-relaxed mb-6">&ldquo;Con un lavoro full-time pensavo fosse impossibile studiare. Con EULE ho studiato la sera e nei weekend, senza pressioni. Ho preso il certificato in 4 mesi.&rdquo;</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-teal/30 rounded-full flex items-center justify-center text-white font-bold text-sm">LV</div>
+            <div>
+              <p class="text-white font-semibold text-sm">Luca V.</p>
+              <p class="text-gray-400 text-xs">Da Marketing Manager a PM</p>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10">
+            <span class="text-xs text-golden font-medium">Corso: Project Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- COME FUNZIONA (TIMELINE) -->
+  <!-- ============================================ -->
+  <section class="py-20 bg-warm-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 fade-up">
+        <h2 class="font-heading font-extrabold text-deep-blue text-3xl sm:text-4xl mb-4">Come Funziona il Tuo Percorso</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Dall'iscrizione al lavoro in 4 semplici step.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 fade-up">
+        <!-- Step 1 -->
+        <div class="text-center relative">
+          <div class="w-14 h-14 bg-teal text-white rounded-2xl flex items-center justify-center mx-auto mb-5 font-heading font-bold text-xl">1</div>
+          <h3 class="font-heading font-bold text-deep-blue text-lg mb-2">Scegli il Corso</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Esplora il catalogo e trova il percorso giusto per i tuoi obiettivi professionali.</p>
+          <!-- Connector line (hidden on mobile) -->
+          <div class="hidden md:block absolute top-7 left-[calc(50%+2rem)] right-0 h-px bg-teal/20"></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="text-center relative">
+          <div class="w-14 h-14 bg-teal text-white rounded-2xl flex items-center justify-center mx-auto mb-5 font-heading font-bold text-xl">2</div>
+          <h3 class="font-heading font-bold text-deep-blue text-lg mb-2">Conosci il Mentor</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Ti viene assegnato un professionista senior del settore che ti seguira' personalmente.</p>
+          <div class="hidden md:block absolute top-7 left-[calc(50%+2rem)] right-0 h-px bg-teal/20"></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="text-center relative">
+          <div class="w-14 h-14 bg-teal text-white rounded-2xl flex items-center justify-center mx-auto mb-5 font-heading font-bold text-xl">3</div>
+          <h3 class="font-heading font-bold text-deep-blue text-lg mb-2">Studia e Pratica</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Video lezioni, esercitazioni pratiche e feedback personalizzato dal tuo mentor.</p>
+          <div class="hidden md:block absolute top-7 left-[calc(50%+2rem)] right-0 h-px bg-teal/20"></div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="text-center">
+          <div class="w-14 h-14 bg-golden text-deep-blue rounded-2xl flex items-center justify-center mx-auto mb-5 font-heading font-bold text-xl">4</div>
+          <h3 class="font-heading font-bold text-deep-blue text-lg mb-2">Certificati e Lavora</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Ottieni l'attestato e accedi al nostro network di 150+ aziende partner.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-12 fade-up">
+        <a href="#corsi" class="inline-flex items-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold px-7 py-3.5 rounded-xl transition-colors">
+          Inizia il Tuo Percorso
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- I NOSTRI CORSI SONO I PRIMI IN EUROPA -->
+  <!-- ============================================ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 fade-up">
+        <span class="inline-block text-xs font-bold text-deep-blue bg-golden/20 px-4 py-1.5 rounded-full uppercase tracking-wider mb-4">100% Online e con Certificazione</span>
+        <h2 class="font-heading font-extrabold text-deep-blue text-3xl sm:text-4xl mb-4">I Nostri Corsi sono i Primi in Europa</h2>
+        <p class="text-gray-500 text-lg">Perche' scegliere il nostro istituto europeo?</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-up">
+
+        <!-- 100% on-demand -->
+        <div class="bg-warm-white rounded-2xl p-7">
+          <div class="w-14 h-14 bg-golden/15 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-deep-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-deep-blue text-lg mb-3">100% on-demand, senza scadenze</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Lezioni 100% online, studia dove vuoi e quando vuoi, senza limiti, <strong class="text-deep-blue">senza scadenze o costi extra</strong>. Imparare non e' mai stato cosi' facile!</p>
+        </div>
+
+        <!-- Numeri 1 in Europa -->
+        <div class="bg-warm-white rounded-2xl p-7">
+          <div class="w-14 h-14 bg-golden/15 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-deep-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-deep-blue text-lg mb-3">Impara dai numeri 1 in Europa nella formazione online!</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">I nostri <strong class="text-deep-blue">Corsi Certificati</strong> ti permetteranno di acquisire le competenze piu' richieste dal mercato del lavoro.</p>
+        </div>
+
+        <!-- Team di Mentor -->
+        <div class="bg-warm-white rounded-2xl p-7">
+          <div class="w-14 h-14 bg-golden/15 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-deep-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-deep-blue text-lg mb-3">Sarai seguito da un team di Mentor</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Una squadra di <strong class="text-deep-blue">mentor professionisti ti guideranno costantemente</strong> tutti i giorni che ne avrai bisogno, 24/7, fino al raggiungimento dei tuoi obiettivi formativi e lavorativi.</p>
+        </div>
+
+        <!-- Trovare lavoro -->
+        <div class="bg-warm-white rounded-2xl p-7">
+          <div class="w-14 h-14 bg-golden/15 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-deep-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-deep-blue text-lg mb-3">Ti aiutiamo a trovare lavoro</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Dopo aver finito uno dei nostri corsi, e preso la certificazione, ti aiuteremo a costruire il tuo portfolio online ed a <strong class="text-deep-blue">metterti in contatto con le aziende per essere assunto</strong>. Avrai anche un nostro supporto pre-colloquio.</p>
+        </div>
+
+        <!-- Community esclusiva -->
+        <div class="bg-warm-white rounded-2xl p-7">
+          <div class="w-14 h-14 bg-golden/15 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-deep-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-deep-blue text-lg mb-3">Community esclusiva</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">In base al corso che sceglierai, avrai accesso ad una community privata ed esclusiva dove sono presenti tutti, i mentor, gli altri studenti ed i rappresentanti delle aziende partner.</p>
+        </div>
+
+        <!-- Certificazione Internazionale -->
+        <div class="bg-warm-white rounded-2xl p-7">
+          <div class="w-14 h-14 bg-golden/15 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-deep-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-deep-blue text-lg mb-3">Certificazione Internazionale</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Riceverai un certificato di qualita' valido a livello internazionale (anche in inglese), <strong class="text-deep-blue">firmato e garantito dal tuo mentor e dall'azienda</strong>.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- ESPERIENZA DI STUDIO ON-DEMAND -->
+  <!-- ============================================ -->
+  <section class="py-20 bg-golden/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center fade-up">
+
+        <!-- Testo -->
+        <div>
+          <span class="inline-block text-xs font-bold text-deep-blue bg-golden/20 px-4 py-1.5 rounded-full uppercase tracking-wider mb-4">Esperienza di Studio Brevettata</span>
+          <h2 class="font-heading font-extrabold text-deep-blue text-3xl sm:text-4xl mb-5 leading-tight">I nostri corsi sono 100% online ed on-demand</h2>
+          <p class="text-gray-600 text-lg mb-8">Dopo aver acquistato avrai accesso immediato ai corsi e potrai prenotare la prima chiamata col tuo mentor!</p>
+
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <div class="w-7 h-7 bg-teal/15 rounded-full flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <span class="text-deep-blue font-medium">Tanta pratica oltre la teoria</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-7 h-7 bg-teal/15 rounded-full flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <span class="text-deep-blue font-medium">Chiamate illimitate con il mentor</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-7 h-7 bg-teal/15 rounded-full flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <span class="text-deep-blue font-medium">Lezioni sia scritte (procedurali) che video</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-7 h-7 bg-teal/15 rounded-full flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <span class="text-deep-blue font-medium">Certificato finale</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-7 h-7 bg-teal/15 rounded-full flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4 text-teal" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <span class="text-deep-blue font-medium">Supporto 24/7 (Email, Chat e Call)</span>
+            </li>
+          </ul>
+
+          <a href="#contatti" class="inline-flex items-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold px-7 py-3.5 rounded-xl transition-colors">
+            Scopri i Corsi
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+        <!-- Immagine -->
+        <div>
+          <img src="assets/on-demand.webp" alt="Studenti EULE Institute - Corsi online on-demand" class="w-full h-auto rounded-2xl shadow-xl" loading="lazy">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- FAQ -->
+  <!-- ============================================ -->
+  <section id="faq" class="py-20 bg-warm-white scroll-mt-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 fade-up">
+        <h2 class="font-heading font-extrabold text-deep-blue text-3xl sm:text-4xl mb-4">Domande Frequenti</h2>
+        <p class="text-gray-500 text-lg">Tutto quello che devi sapere prima di iniziare.</p>
+      </div>
+
+      <div class="space-y-3 fade-up">
+        <details class="bg-white rounded-xl border border-gray-100 group">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5">
+            <span class="font-heading font-semibold text-deep-blue pr-4">Come funzionano i corsi online?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-500 leading-relaxed">Tutto il materiale e' sempre online e a tua disposizione per sempre. Le lezioni includono testi procedurali, video ed esercitazioni pratiche. Anche le chiamate col mentor potrai farle dove vuoi e quando vuoi.</div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-100 group">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5">
+            <span class="font-heading font-semibold text-deep-blue pr-4">Quanto tempo ho per completare il corso?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-500 leading-relaxed">Non ci sono scadenze. Puoi prendere la certificazione in poche settimane (studiando full-time) o in diversi mesi (part-time). Non ci saranno mai costi extra o limiti di tempo. Siamo gli unici a offrire questa flessibilita'.</div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-100 group">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5">
+            <span class="font-heading font-semibold text-deep-blue pr-4">La certificazione e' riconosciuta in Europa?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-500 leading-relaxed">Si. Al termine del corso, se tutti gli esercizi saranno approvati dal tuo mentor, riceverai un certificato internazionale (disponibile anche in inglese) firmato dal tuo mentor. Il mentor sara' disponibile anche per referenze telefoniche ed email durante i tuoi colloqui.</div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-100 group">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5">
+            <span class="font-heading font-semibold text-deep-blue pr-4">Come funziona il mentor personale?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-500 leading-relaxed">Avrai supporto illimitato finche' non prenderai la certificazione. Un professionista Senior con piu' di 8 anni di esperienza corregge tutti i tuoi esercizi con video correzioni personalizzate, approva i tuoi lavori e ti da' consigli per migliorare. Le chiamate sono private (non di gruppo) e illimitate.</div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-100 group">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5">
+            <span class="font-heading font-semibold text-deep-blue pr-4">Quanto costano i corsi?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-500 leading-relaxed">I nostri corsi sono tra i piu' convenienti in Italia in termini di qualita' e prezzo. Il costo varia in base al percorso scelto. Contattaci per un preventivo personalizzato e scopri le opzioni di pagamento a rate.</div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-100 group">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5">
+            <span class="font-heading font-semibold text-deep-blue pr-4">Si puo' pagare a rate?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-500 leading-relaxed">Si. Durante la fase d'acquisto puoi scegliere l'opzione di pagamento in 3 comode rate mensili. Utilizziamo i sistemi di pagamento piu' sicuri al mondo: PayPal e Stripe.</div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-100 group">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5">
+            <span class="font-heading font-semibold text-deep-blue pr-4">Lavoro tutto il giorno, come faccio?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-500 leading-relaxed">I nostri corsi sono stati progettati appositamente per i professionisti che lavorano tutto il giorno e hanno poco tempo. Puoi studiare e fare gli esercizi quando vuoi, non ci sono scadenze, e i mentor ti supporteranno sempre.</div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-100 group">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5">
+            <span class="font-heading font-semibold text-deep-blue pr-4">Come funziona il supporto al placement?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-500 leading-relaxed">Dopo aver finito il corso e ottenuto la certificazione, ti aiuteremo a costruire il tuo portfolio online e a metterti in contatto con le aziende partner. Avrai anche un supporto pre-colloquio per prepararti al meglio.</div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-100 group">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5">
+            <span class="font-heading font-semibold text-deep-blue pr-4">Ho bisogno di esperienza precedente?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-500 leading-relaxed">No. I nostri corsi partono dalle basi e sono adatti sia a principianti che a chi ha gia' esperienza nel settore. Il mentor adattera' il percorso al tuo livello.</div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-100 group">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5">
+            <span class="font-heading font-semibold text-deep-blue pr-4">Posso iniziare subito?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-gray-500 leading-relaxed">Si. Dopo l'acquisto avrai accesso immediato a tutti i materiali del corso e potrai prenotare la prima chiamata con il tuo mentor. Non ci sono date di inizio fisse.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- CTA FINALE + CONTATTO -->
+  <!-- ============================================ -->
+  <section id="contatti" class="py-20 md:py-24 bg-deep-blue scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 fade-up">
+        <h2 class="font-heading font-extrabold text-white text-3xl sm:text-4xl mb-4">Pronto a Cambiare la Tua Carriera?</h2>
+        <p class="text-gray-300 text-lg max-w-xl mx-auto">Parla con un nostro consulente e scopri il percorso giusto per te. Senza impegno.</p>
+      </div>
+
+      <div class="max-w-lg mx-auto fade-up">
+        <!-- Immagine sopra il form -->
+        <img src="assets/group-80.jpg" alt="Hai bisogno di più informazioni? Siamo qui per aiutarti" class="w-full h-auto rounded-t-2xl" loading="lazy">
+        <!-- Form -->
+        <div class="bg-white rounded-b-2xl p-8 md:p-10">
+        <form class="space-y-5" action="https://formsubmit.co/info@euleinstitute.com" method="POST">
+          <input type="hidden" name="_subject" value="Nuova richiesta dal sito EULE Institute">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome e Cognome</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal focus:ring-2 focus:ring-teal/20 outline-none transition-all text-sm" placeholder="Mario Rossi">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal focus:ring-2 focus:ring-teal/20 outline-none transition-all text-sm" placeholder="mario@email.com">
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefono <span class="text-gray-400">(opzionale)</span></label>
+            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal focus:ring-2 focus:ring-teal/20 outline-none transition-all text-sm" placeholder="+39 333 1234567">
+          </div>
+          <div>
+            <label for="course" class="block text-sm font-medium text-gray-700 mb-1">Corso di interesse</label>
+            <select id="course" name="course" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal focus:ring-2 focus:ring-teal/20 outline-none transition-all text-sm bg-white">
+              <option value="">Seleziona un corso...</option>
+              <option value="user-research">User Research</option>
+              <option value="interaction-design">Interaction Design</option>
+              <option value="visual-ui-design">Visual e UI Design</option>
+              <option value="ux-writing">UX Writing &amp; Microcopy</option>
+              <option value="figma">Figma per UI Designer</option>
+              <option value="html-css">HTML e CSS per Webdesign</option>
+              <option value="project-management">Project Management</option>
+              <option value="interior-design">Interior Design Online</option>
+              <option value="non-so">Non so ancora</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full bg-golden hover:bg-golden-dark text-deep-blue font-bold py-3.5 rounded-xl transition-colors text-base">
+            Parla con un Consulente
+          </button>
+          <p class="text-xs text-gray-400 text-center">Rispondiamo entro 24 ore. Nessun impegno richiesto.</p>
+        </form>
+        </div>
+      </div>
+
+      <div class="text-center mt-8 fade-up">
+        <p class="text-gray-400 text-sm">Oppure scrivici a <a href="mailto:info@euleinstitute.com" class="text-golden hover:underline">info@euleinstitute.com</a></p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================ -->
+  <footer class="bg-deep-blue-dark py-16 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <!-- Brand -->
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <img src="assets/logo.png" alt="EULE Institute" class="h-8 w-auto brightness-0 invert">
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">Dal 2016 il primo istituto di formazione europeo con corsi certificati 100% online, con mentor personale, senza scadenze o costi extra.</p>
+        </div>
+
+        <!-- Corsi -->
+        <div>
+          <h4 class="font-heading font-bold text-white mb-4">Corsi</h4>
+          <ul class="space-y-2">
+            <li><a href="#corsi" class="text-gray-400 hover:text-white text-sm transition-colors">UX/UI Design</a></li>
+            <li><a href="#corsi" class="text-gray-400 hover:text-white text-sm transition-colors">Interior Design</a></li>
+            <li><a href="#corsi" class="text-gray-400 hover:text-white text-sm transition-colors">Project Management</a></li>
+            <li><a href="#corsi" class="text-gray-400 hover:text-white text-sm transition-colors">HTML &amp; CSS</a></li>
+            <li><a href="#corsi" class="text-gray-400 hover:text-white text-sm transition-colors">UX Writing</a></li>
+          </ul>
+        </div>
+
+        <!-- Risorse -->
+        <div>
+          <h4 class="font-heading font-bold text-white mb-4">Risorse</h4>
+          <ul class="space-y-2">
+            <li><a href="#metodo" class="text-gray-400 hover:text-white text-sm transition-colors">Il Metodo EULE</a></li>
+            <li><a href="#testimonianze" class="text-gray-400 hover:text-white text-sm transition-colors">Testimonianze</a></li>
+            <li><a href="#faq" class="text-gray-400 hover:text-white text-sm transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Contatti -->
+        <div>
+          <h4 class="font-heading font-bold text-white mb-4">Contatti</h4>
+          <ul class="space-y-2">
+            <li><a href="mailto:info@euleinstitute.com" class="text-gray-400 hover:text-white text-sm transition-colors">info@euleinstitute.com</a></li>
+            <li><span class="text-gray-400 text-sm">EULE Institute S.r.l.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-gray-500 text-xs">&copy; 2016&ndash;2026 EULE Institute. Tutti i Diritti Riservati.</p>
+        <div class="flex items-center gap-6">
+          <a href="privacy-policy.html" class="text-gray-500 hover:text-gray-300 text-xs transition-colors">Privacy Policy</a>
+          <a href="terms-conditions.html" class="text-gray-500 hover:text-gray-300 text-xs transition-colors">Termini e Condizioni</a>
+          <a href="cookie-policy.html" class="text-gray-500 hover:text-gray-300 text-xs transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================ -->
+  <!-- JAVASCRIPT -->
+  <!-- ============================================ -->
+  <script>
+    // Header shadow on scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('header-scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuIconOpen.classList.toggle('hidden');
+      menuIconClose.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      });
+    });
+
+    // Course tab filter
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const courseCards = document.querySelectorAll('.course-card');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const track = btn.dataset.track;
+
+        tabBtns.forEach(b => {
+          b.classList.remove('bg-deep-blue', 'text-white', 'active');
+          b.classList.add('bg-gray-100', 'text-gray-600');
+        });
+        btn.classList.add('bg-deep-blue', 'text-white', 'active');
+        btn.classList.remove('bg-gray-100', 'text-gray-600');
+
+        courseCards.forEach(card => {
+          if (track === 'all' || card.dataset.track === track) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Scroll animations (fade-up)
+    const fadeElements = document.querySelectorAll('.fade-up');
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    fadeElements.forEach(el => fadeObserver.observe(el));
+  </script>
+
+</body>
+</html>
