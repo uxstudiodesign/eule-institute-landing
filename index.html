@@ -5,14 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#203e5f">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WBXRSMMDT9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-WBXRSMMDT9');
-  </script>
+  <!-- Google Analytics (deferred) -->
   <title>EULE Institute | Corsi Online Certificati con Mentor Personale</title>
   <meta name="description" content="Corsi professionali 100% online con mentor personale, certificazione internazionale e supporto al placement. Dal 2016. UX/UI Design, Interior Design, Project Management.">
 
@@ -43,8 +36,8 @@
   <meta name="twitter:description" content="Corsi professionali 100% online con mentor personale e certificazione internazionale. Dal 2016. Oltre 9.000 studenti.">
   <meta name="twitter:image" content="https://euleinstitute.com/assets/banner-certificazione.webp">
 
-  <!-- LCP Preload -->
-  <link rel="preload" as="image" href="assets/group-hero.webp" fetchpriority="high" type="image/webp">
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="assets/group-hero.webp" type="image/webp">
 
   <!-- Preconnect -->
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -322,7 +315,7 @@
       <div class="flex items-center justify-between h-16 md:h-18">
         <!-- Logo -->
         <a href="#" class="flex items-center gap-2 shrink-0">
-          <img src="assets/logo.png" alt="EULE Institute - European Learning Institute" class="h-10 w-auto" width="293" height="112">
+          <img src="assets/logo.png" alt="EULE Institute - European Learning Institute" class="h-10 w-auto" width="293" height="112" fetchpriority="high">
         </a>
 
         <!-- Desktop Nav -->
@@ -423,7 +416,7 @@
 
         <!-- Visual -->
         <div class="lg:col-span-2 fade-up">
-          <img src="assets/group-hero.webp" alt="Studentessa laureata EULE Institute con dashboard corsi, video call mentor e progressi" class="w-full max-w-md lg:max-w-none mx-auto drop-shadow-2xl" width="695" height="672" fetchpriority="high">
+          <img src="assets/group-hero.webp" alt="Studentessa laureata EULE Institute con dashboard corsi, video call mentor e progressi" class="w-full max-w-md lg:max-w-none mx-auto drop-shadow-2xl" width="665" height="642" fetchpriority="high">
         </div>
       </div>
     </div>
@@ -537,7 +530,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12 fade-up">
         <!-- Banner certificazione a sinistra -->
         <a href="#contatti" class="block overflow-hidden rounded-2xl hover:shadow-lg transition-shadow">
-          <img src="assets/banner-certificazione.webp" alt="Scegli il tuo percorso e ottieni la certificazione EULE Institute" class="w-full h-auto" width="800" height="352" loading="lazy">
+          <img src="assets/banner-certificazione.webp" alt="Scegli il tuo percorso e ottieni la certificazione EULE Institute" class="w-full h-auto" width="665" height="292" loading="lazy">
         </a>
         <!-- Titolo + descrizione + tabs a destra -->
         <div>
@@ -738,7 +731,7 @@
                 <p class="text-gray-500 text-sm leading-relaxed">Un Mentor Senior a tua disposizione ti aiutera' durante il corso con <strong class="text-deep-blue">chiamate Skype illimitate</strong> private (non di gruppo) e con le <strong class="text-deep-blue">video correzioni degli esercizi</strong>.</p>
               </div>
               <div class="rounded-xl overflow-hidden flex items-center">
-                <img src="assets/mentoring.avif" alt="Sessione di mentoring online con mentor EULE Institute" class="w-full h-auto rounded-xl" loading="lazy">
+                <img src="assets/mentoring.avif" alt="Sessione di mentoring online con mentor EULE Institute" class="w-full h-auto rounded-xl" width="800" height="533" loading="lazy">
               </div>
             </div>
           </div>
@@ -753,7 +746,7 @@
                 <p class="text-gray-400 text-xs italic leading-relaxed">200 ore tra lezioni scritte, video ed esercitazioni fruibili subito dopo l'iscrizione al corso.</p>
               </div>
               <div class="rounded-xl overflow-hidden flex items-center">
-                <img src="assets/tanta-pratica.avif" alt="Studente che lavora su un progetto Figma" class="w-full h-auto rounded-xl" loading="lazy">
+                <img src="assets/tanta-pratica.avif" alt="Studente che lavora su un progetto Figma" class="w-full h-auto rounded-xl" width="800" height="450" loading="lazy">
               </div>
             </div>
           </div>
@@ -1091,7 +1084,7 @@
 
         <!-- Immagine -->
         <div>
-          <img src="assets/on-demand.webp" alt="Studenti EULE Institute - Corsi online on-demand" class="w-full h-auto rounded-2xl shadow-xl" loading="lazy">
+          <img src="assets/on-demand.webp" alt="Studenti EULE Institute - Corsi online on-demand" class="w-full h-auto rounded-2xl shadow-xl" width="1200" height="825" loading="lazy">
         </div>
 
       </div>
@@ -1389,6 +1382,27 @@
     }, observerOptions);
 
     fadeElements.forEach(el => fadeObserver.observe(el));
+  </script>
+
+  <!-- Google Analytics (deferred until after page interaction) -->
+  <script>
+    function loadGA() {
+      if (window._gaLoaded) return;
+      window._gaLoaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-WBXRSMMDT9';
+      s.async = true;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-WBXRSMMDT9');
+    }
+    setTimeout(loadGA, 3000);
+    ['scroll','click','touchstart','keydown'].forEach(function(e){
+      window.addEventListener(e, loadGA, {once:true,passive:true});
+    });
   </script>
 
 </body>
