@@ -46,11 +46,13 @@
   <!-- LCP Preload -->
   <link rel="preload" as="image" href="assets/group-hero.webp" fetchpriority="high" type="image/webp">
 
-  <!-- Fonts -->
+  <!-- Preconnect -->
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Inter:wght@400;500;600&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
@@ -333,7 +335,7 @@
         </nav>
 
         <!-- Desktop CTA -->
-        <a href="#contatti" class="hidden lg:inline-flex items-center gap-2 bg-teal hover:bg-teal-dark text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
+        <a href="#contatti" class="hidden lg:inline-flex items-center gap-2 bg-teal-dark hover:bg-[#165f5f] text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
           Prenota una Consulenza
         </a>
 
@@ -357,7 +359,7 @@
         <a href="#testimonianze" class="block text-sm font-medium text-gray-600 hover:text-deep-blue py-2">Testimonianze</a>
         <a href="#faq" class="block text-sm font-medium text-gray-600 hover:text-deep-blue py-2">FAQ</a>
         <a href="#contatti" class="block text-sm font-medium text-gray-600 hover:text-deep-blue py-2">Contatti</a>
-        <a href="#contatti" class="block bg-teal hover:bg-teal-dark text-white text-sm font-semibold px-5 py-2.5 rounded-lg text-center transition-colors mt-2">
+        <a href="#contatti" class="block bg-teal-dark hover:bg-[#165f5f] text-white text-sm font-semibold px-5 py-2.5 rounded-lg text-center transition-colors mt-2">
           Prenota una Consulenza
         </a>
       </div>
@@ -388,7 +390,7 @@
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 mb-10">
-            <a href="#corsi" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold px-7 py-3.5 rounded-xl transition-colors text-base">
+            <a href="#corsi" class="inline-flex items-center justify-center gap-2 bg-teal-dark hover:bg-[#165f5f] text-white font-semibold px-7 py-3.5 rounded-xl transition-colors text-base">
               Esplora i Corsi
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </a>
@@ -542,16 +544,16 @@
           <h2 class="font-heading font-extrabold text-deep-blue text-3xl sm:text-4xl mb-3">I Nostri Percorsi Formativi</h2>
           <p class="text-gray-500 text-lg mb-6">Scegli il percorso giusto per la tua carriera. Ogni corso include mentor personale, certificazione e accesso a vita.</p>
           <div class="flex flex-wrap gap-3" role="tablist">
-            <button class="tab-btn active bg-deep-blue text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all" data-track="all">
+            <button class="tab-btn active bg-deep-blue text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all" role="tab" aria-selected="true" data-track="all">
               Tutti i Corsi
             </button>
-            <button class="tab-btn bg-gray-100 text-gray-600 hover:bg-gray-200 font-semibold text-sm px-5 py-2.5 rounded-full transition-all" data-track="design">
+            <button class="tab-btn bg-gray-100 text-gray-600 hover:bg-gray-200 font-semibold text-sm px-5 py-2.5 rounded-full transition-all" role="tab" aria-selected="false" data-track="design">
               Design
             </button>
-            <button class="tab-btn bg-gray-100 text-gray-600 hover:bg-gray-200 font-semibold text-sm px-5 py-2.5 rounded-full transition-all" data-track="it">
+            <button class="tab-btn bg-gray-100 text-gray-600 hover:bg-gray-200 font-semibold text-sm px-5 py-2.5 rounded-full transition-all" role="tab" aria-selected="false" data-track="it">
               IT
             </button>
-            <button class="tab-btn bg-gray-100 text-gray-600 hover:bg-gray-200 font-semibold text-sm px-5 py-2.5 rounded-full transition-all" data-track="architettura">
+            <button class="tab-btn bg-gray-100 text-gray-600 hover:bg-gray-200 font-semibold text-sm px-5 py-2.5 rounded-full transition-all" role="tab" aria-selected="false" data-track="architettura">
               Architettura
             </button>
           </div>
@@ -567,7 +569,7 @@
           <img src="assets/corso-user-research.webp" alt="Corso User Research Design online certificato con mentor - EULE Institute" class="w-full h-auto" width="608" height="760" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
-            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">User Research Design</h4>
+            <h3 class="font-heading font-bold text-deep-blue text-lg mb-2">User Research Design</h3>
             <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Impara a condurre ricerche utente, interviste, test di usabilita' e analisi dei dati per progettare prodotti centrati sull'utente.</p>
             <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
               <span>32 lezioni &middot; 10 esercizi</span>
@@ -585,7 +587,7 @@
           <img src="assets/corso-interaction-design.webp" alt="Corso Interaction Design online con wireframe e prototipazione - EULE Institute" class="w-full h-auto" width="608" height="760" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
-            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Interaction Design</h4>
+            <h3 class="font-heading font-bold text-deep-blue text-lg mb-2">Interaction Design</h3>
             <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Card sorting, sitemap, wireframe e prototipazione. Impara a progettare flussi e interazioni efficaci per web e mobile.</p>
             <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
               <span>18 lezioni &middot; 7 esercizi</span>
@@ -603,7 +605,7 @@
           <img src="assets/corso-visual-ui.webp" alt="Corso Visual e UI Design online con design system e Figma - EULE Institute" class="w-full h-auto" width="608" height="760" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
-            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Visual e UI Design</h4>
+            <h3 class="font-heading font-bold text-deep-blue text-lg mb-2">Visual e UI Design</h3>
             <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Tipografia, colori, layout e design system. Crea interfacce belle e funzionali per app e siti web.</p>
             <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
               <span>34 lezioni &middot; 9 esercizi</span>
@@ -621,7 +623,7 @@
           <img src="assets/corso-ux-writing.webp" alt="Corso UX Writing e Microcopy online con mentor certificato - EULE Institute" class="w-full h-auto" width="608" height="760" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
-            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">UX Writing &amp; Microcopy</h4>
+            <h3 class="font-heading font-bold text-deep-blue text-lg mb-2">UX Writing &amp; Microcopy</h3>
             <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Scrivi testi per interfacce digitali che guidano l'utente. Microcopy, tone of voice e content strategy.</p>
             <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
               <span>42 lezioni &middot; 10 esercizi</span>
@@ -639,7 +641,7 @@
           <img src="assets/corso-figma.webp" alt="Corso Figma per UI Designer online: componenti, auto-layout e prototipi - EULE Institute" class="w-full h-auto" width="608" height="760" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
-            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Figma per UI Designer</h4>
+            <h3 class="font-heading font-bold text-deep-blue text-lg mb-2">Figma per UI Designer</h3>
             <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Padroneggia Figma: componenti, auto-layout, prototipi interattivi e collaborazione in team.</p>
             <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
               <span>56 lezioni &middot; 12 esercizi</span>
@@ -657,7 +659,7 @@
           <img src="assets/html-css.webp" alt="Corso HTML e CSS per Webdesign online con Flexbox e Grid - EULE Institute" class="w-full h-auto" width="608" height="752" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-teal bg-teal/10 px-3 py-1 rounded-full w-fit mb-3">Percorso IT</span>
-            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">HTML e CSS per Webdesign</h4>
+            <h3 class="font-heading font-bold text-deep-blue text-lg mb-2">HTML e CSS per Webdesign</h3>
             <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Le basi dello sviluppo web: HTML semantico, CSS moderno, responsive design e layout con Flexbox e Grid.</p>
             <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
               <span>56 lezioni &middot; 12 esercizi</span>
@@ -675,7 +677,7 @@
           <img src="assets/management.webp" alt="Corso Project Management online Agile Scrum certificato - EULE Institute" class="w-full h-auto" width="608" height="752" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-teal bg-teal/10 px-3 py-1 rounded-full w-fit mb-3">Percorso IT</span>
-            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Project Management</h4>
+            <h3 class="font-heading font-bold text-deep-blue text-lg mb-2">Project Management</h3>
             <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Metodologie Agile, Scrum e Waterfall. Gestisci progetti digitali dalla pianificazione alla consegna.</p>
             <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
               <span>56 lezioni &middot; 12 esercizi</span>
@@ -693,7 +695,7 @@
           <img src="assets/interior-design-1.webp" alt="Corso Interior Design Online con render 3D e progettazione d'interni - EULE Institute" class="w-full h-auto" width="608" height="752" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-deep-blue bg-deep-blue/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Architettura</span>
-            <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Interior Design Online</h4>
+            <h3 class="font-heading font-bold text-deep-blue text-lg mb-2">Interior Design Online</h3>
             <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Progettazione d'interni dalla teoria alla pratica. Render 3D, materiali, colori e spazi funzionali.</p>
             <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
               <span>Corso completo</span>
@@ -792,28 +794,28 @@
           <div class="w-10 h-10 bg-golden/10 rounded-lg flex items-center justify-center mx-auto mb-3">
             <svg class="w-5 h-5 text-golden-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
-          <h4 class="font-heading font-bold text-deep-blue text-sm mb-1">100% Online</h4>
+          <p class="font-heading font-bold text-deep-blue text-sm mb-1">100% Online</p>
           <p class="text-gray-400 text-xs">Studia ai tuoi tempi, accesso a vita</p>
         </div>
         <div class="bg-white rounded-xl p-5 shadow-sm text-center">
           <div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mx-auto mb-3">
             <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           </div>
-          <h4 class="font-heading font-bold text-deep-blue text-sm mb-1">Placement</h4>
+          <p class="font-heading font-bold text-deep-blue text-sm mb-1">Placement</p>
           <p class="text-gray-400 text-xs">150+ aziende partner, supporto CV</p>
         </div>
         <div class="bg-white rounded-xl p-5 shadow-sm text-center">
           <div class="w-10 h-10 bg-golden/10 rounded-lg flex items-center justify-center mx-auto mb-3">
             <svg class="w-5 h-5 text-golden-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           </div>
-          <h4 class="font-heading font-bold text-deep-blue text-sm mb-1">9.000+ Studenti</h4>
+          <p class="font-heading font-bold text-deep-blue text-sm mb-1">9.000+ Studenti</p>
           <p class="text-gray-400 text-xs">Community attiva dal 2016</p>
         </div>
         <div class="bg-white rounded-xl p-5 shadow-sm text-center">
           <div class="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center mx-auto mb-3">
             <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
           </div>
-          <h4 class="font-heading font-bold text-deep-blue text-sm mb-1">4.8/5 Rating</h4>
+          <p class="font-heading font-bold text-deep-blue text-sm mb-1">4.8/5 Rating</p>
           <p class="text-gray-400 text-xs">Valutazione media Trustpilot</p>
         </div>
       </div>
@@ -1272,7 +1274,7 @@
 
         <!-- Corsi -->
         <div>
-          <h4 class="font-heading font-bold text-white mb-4">Corsi</h4>
+          <p class="font-heading font-bold text-white mb-4">Corsi</p>
           <ul class="space-y-2">
             <li><a href="#corsi" class="text-gray-400 hover:text-white text-sm transition-colors">UX/UI Design</a></li>
             <li><a href="#corsi" class="text-gray-400 hover:text-white text-sm transition-colors">Interior Design</a></li>
@@ -1284,7 +1286,7 @@
 
         <!-- Risorse -->
         <div>
-          <h4 class="font-heading font-bold text-white mb-4">Risorse</h4>
+          <p class="font-heading font-bold text-white mb-4">Risorse</p>
           <ul class="space-y-2">
             <li><a href="#metodo" class="text-gray-400 hover:text-white text-sm transition-colors">Il Metodo EULE</a></li>
             <li><a href="#testimonianze" class="text-gray-400 hover:text-white text-sm transition-colors">Testimonianze</a></li>
@@ -1294,7 +1296,7 @@
 
         <!-- Contatti -->
         <div>
-          <h4 class="font-heading font-bold text-white mb-4">Contatti</h4>
+          <p class="font-heading font-bold text-white mb-4">Contatti</p>
           <ul class="space-y-2">
             <li><a href="mailto:info@euleinstitute.com" class="text-gray-400 hover:text-white text-sm transition-colors">info@euleinstitute.com</a></li>
             <li><span class="text-gray-400 text-sm">EULE Institute S.r.l.</span></li>
@@ -1303,11 +1305,11 @@
       </div>
 
       <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-gray-500 text-xs">&copy; 2016&ndash;2026 EULE Institute. Tutti i Diritti Riservati.</p>
+        <p class="text-gray-400 text-xs">&copy; 2016&ndash;2026 EULE Institute. Tutti i Diritti Riservati.</p>
         <div class="flex items-center gap-6">
-          <a href="privacy-policy.html" class="text-gray-500 hover:text-gray-300 text-xs transition-colors">Privacy Policy</a>
-          <a href="terms-conditions.html" class="text-gray-500 hover:text-gray-300 text-xs transition-colors">Termini e Condizioni</a>
-          <a href="cookie-policy.html" class="text-gray-500 hover:text-gray-300 text-xs transition-colors">Cookie Policy</a>
+          <a href="privacy-policy.html" class="text-gray-400 hover:text-gray-300 text-xs transition-colors">Privacy Policy</a>
+          <a href="terms-conditions.html" class="text-gray-400 hover:text-gray-300 text-xs transition-colors">Termini e Condizioni</a>
+          <a href="cookie-policy.html" class="text-gray-400 hover:text-gray-300 text-xs transition-colors">Cookie Policy</a>
         </div>
       </div>
     </div>
@@ -1357,9 +1359,11 @@
         tabBtns.forEach(b => {
           b.classList.remove('bg-deep-blue', 'text-white', 'active');
           b.classList.add('bg-gray-100', 'text-gray-600');
+          b.setAttribute('aria-selected', 'false');
         });
         btn.classList.add('bg-deep-blue', 'text-white', 'active');
         btn.classList.remove('bg-gray-100', 'text-gray-600');
+        btn.setAttribute('aria-selected', 'true');
 
         courseCards.forEach(card => {
           if (track === 'all' || card.dataset.track === track) {
