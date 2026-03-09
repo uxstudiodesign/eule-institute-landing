@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#203e5f">
   <title>EULE Institute | Corsi Online Certificati con Mentor Personale</title>
-  <meta name="description" content="Corsi professionali 100% online con mentor personale, certificazione internazionale e supporto al placement. Dal 2016. UX/UI Design, Interior Design, Project Management e altro.">
+  <meta name="description" content="Corsi professionali 100% online con mentor personale, certificazione internazionale e supporto al placement. Dal 2016. UX/UI Design, Interior Design, Project Management.">
+
+  <!-- Canonical & Hreflang -->
+  <link rel="canonical" href="https://euleinstitute.com/">
+  <link rel="alternate" hreflang="it" href="https://euleinstitute.com/">
+  <link rel="alternate" hreflang="x-default" href="https://euleinstitute.com/">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -12,11 +18,28 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="EULE Institute | Corsi Online Certificati con Mentor Personale">
-  <meta property="og:description" content="Corsi professionali 100% online con mentor personale e certificazione internazionale. Dal 2016.">
+  <meta property="og:description" content="Corsi professionali 100% online con mentor personale e certificazione internazionale. Dal 2016. Oltre 9.000 studenti, rating 4.8/5.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://euleinstitute.com">
+  <meta property="og:url" content="https://euleinstitute.com/">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="EULE Institute">
+  <meta property="og:image" content="https://euleinstitute.com/assets/banner-certificazione.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="EULE Institute - Corsi Online Certificati con Mentor Personale">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EULE Institute | Corsi Online Certificati con Mentor Personale">
+  <meta name="twitter:description" content="Corsi professionali 100% online con mentor personale e certificazione internazionale. Dal 2016. Oltre 9.000 studenti.">
+  <meta name="twitter:image" content="https://euleinstitute.com/assets/banner-certificazione.png">
+
+  <!-- LCP Preload -->
+  <link rel="preload" as="image" href="assets/group-hero.png" fetchpriority="high">
 
   <!-- Fonts -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -92,6 +115,189 @@
       transform: translateY(0);
     }
   </style>
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "EULE Institute",
+      "alternateName": "European Learning Institute",
+      "url": "https://euleinstitute.com",
+      "logo": "https://euleinstitute.com/assets/logo.png",
+      "foundingDate": "2016",
+      "legalName": "SynapseFoundation OÜ",
+      "email": "info@euleinstitute.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Vesivärava tn 50-201",
+        "addressLocality": "Tallinn",
+        "postalCode": "10152",
+        "addressCountry": "EE"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "9000",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "User Research Design",
+      "description": "Impara a condurre ricerche utente, interviste, test di usabilita' e analisi dei dati per progettare prodotti centrati sull'utente. 32 lezioni, 10 esercizi, 200+ ore.",
+      "provider": { "@type": "Organization", "name": "EULE Institute", "url": "https://euleinstitute.com" },
+      "url": "https://master.euleinstitute.com/courses/user-research",
+      "courseMode": "online",
+      "educationalLevel": "Beginner to Advanced",
+      "inLanguage": "it",
+      "offers": { "@type": "Offer", "category": "Paid", "availability": "https://schema.org/InStock" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Interaction Design",
+      "description": "Card sorting, sitemap, wireframe e prototipazione. Impara a progettare flussi e interazioni efficaci per web e mobile. 18 lezioni, 7 esercizi, 200+ ore.",
+      "provider": { "@type": "Organization", "name": "EULE Institute", "url": "https://euleinstitute.com" },
+      "url": "https://master.euleinstitute.com/courses/interaction-design",
+      "courseMode": "online",
+      "educationalLevel": "Beginner to Advanced",
+      "inLanguage": "it",
+      "offers": { "@type": "Offer", "category": "Paid", "availability": "https://schema.org/InStock" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Visual e UI Design",
+      "description": "Tipografia, colori, layout e design system. Crea interfacce belle e funzionali per app e siti web. 34 lezioni, 9 esercizi, 200+ ore.",
+      "provider": { "@type": "Organization", "name": "EULE Institute", "url": "https://euleinstitute.com" },
+      "url": "https://master.euleinstitute.com/courses/visual-design",
+      "courseMode": "online",
+      "educationalLevel": "Beginner to Advanced",
+      "inLanguage": "it",
+      "offers": { "@type": "Offer", "category": "Paid", "availability": "https://schema.org/InStock" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "UX Writing e Microcopy",
+      "description": "Scrivi testi per interfacce digitali che guidano l'utente. Microcopy, tone of voice e content strategy. 42 lezioni, 10 esercizi, 200+ ore.",
+      "provider": { "@type": "Organization", "name": "EULE Institute", "url": "https://euleinstitute.com" },
+      "url": "https://master.euleinstitute.com/courses/ux-writing",
+      "courseMode": "online",
+      "educationalLevel": "Beginner to Advanced",
+      "inLanguage": "it",
+      "offers": { "@type": "Offer", "category": "Paid", "availability": "https://schema.org/InStock" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Figma per UI Designer",
+      "description": "Padroneggia Figma: componenti, auto-layout, prototipi interattivi e collaborazione in team. 56 lezioni, 12 esercizi, accesso on-demand.",
+      "provider": { "@type": "Organization", "name": "EULE Institute", "url": "https://euleinstitute.com" },
+      "url": "https://master.euleinstitute.com/courses/learn-figma-tutorial",
+      "courseMode": "online",
+      "educationalLevel": "Beginner to Advanced",
+      "inLanguage": "it",
+      "offers": { "@type": "Offer", "category": "Paid", "availability": "https://schema.org/InStock" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "HTML e CSS per Webdesign",
+      "description": "Le basi dello sviluppo web: HTML semantico, CSS moderno, responsive design e layout con Flexbox e Grid. 56 lezioni, 12 esercizi, 200+ ore.",
+      "provider": { "@type": "Organization", "name": "EULE Institute", "url": "https://euleinstitute.com" },
+      "url": "https://master.euleinstitute.com/courses/html-css",
+      "courseMode": "online",
+      "educationalLevel": "Beginner to Advanced",
+      "inLanguage": "it",
+      "offers": { "@type": "Offer", "category": "Paid", "availability": "https://schema.org/InStock" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Project Management",
+      "description": "Metodologie Agile, Scrum e Waterfall. Gestisci progetti digitali dalla pianificazione alla consegna. 56 lezioni, 12 esercizi, 200+ ore.",
+      "provider": { "@type": "Organization", "name": "EULE Institute", "url": "https://euleinstitute.com" },
+      "url": "https://master.euleinstitute.com/courses/project-management",
+      "courseMode": "online",
+      "educationalLevel": "Beginner to Advanced",
+      "inLanguage": "it",
+      "offers": { "@type": "Offer", "category": "Paid", "availability": "https://schema.org/InStock" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Interior Design Online",
+      "description": "Progettazione d'interni dalla teoria alla pratica. Render 3D, materiali, colori e spazi funzionali. Corso completo, 200+ ore.",
+      "provider": { "@type": "Organization", "name": "EULE Institute", "url": "https://euleinstitute.com" },
+      "url": "https://master.euleinstitute.com/courses/interior-design",
+      "courseMode": "online",
+      "educationalLevel": "Beginner to Advanced",
+      "inLanguage": "it",
+      "offers": { "@type": "Offer", "category": "Paid", "availability": "https://schema.org/InStock" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Come funzionano i corsi online?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Tutto il materiale e' sempre online e a tua disposizione per sempre. Le lezioni includono testi procedurali, video ed esercitazioni pratiche. Anche le chiamate col mentor potrai farle dove vuoi e quando vuoi." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo ho per completare il corso?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Non ci sono scadenze. Puoi prendere la certificazione in poche settimane (studiando full-time) o in diversi mesi (part-time). Non ci saranno mai costi extra o limiti di tempo." }
+        },
+        {
+          "@type": "Question",
+          "name": "La certificazione e' riconosciuta in Europa?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Si. Al termine del corso, se tutti gli esercizi saranno approvati dal tuo mentor, riceverai un certificato internazionale (disponibile anche in inglese) firmato dal tuo mentor. Il mentor sara' disponibile anche per referenze telefoniche ed email durante i tuoi colloqui." }
+        },
+        {
+          "@type": "Question",
+          "name": "Come funziona il mentor personale?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Avrai supporto illimitato finche' non prenderai la certificazione. Un professionista Senior con piu' di 8 anni di esperienza corregge tutti i tuoi esercizi con video correzioni personalizzate. Le chiamate sono private (non di gruppo) e illimitate." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto costano i corsi?",
+          "acceptedAnswer": { "@type": "Answer", "text": "I nostri corsi sono tra i piu' convenienti in Italia in termini di qualita' e prezzo. Il costo varia in base al percorso scelto. Contattaci per un preventivo personalizzato e scopri le opzioni di pagamento a rate." }
+        },
+        {
+          "@type": "Question",
+          "name": "Si puo' pagare a rate?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Si. Durante la fase d'acquisto puoi scegliere l'opzione di pagamento in 3 comode rate mensili. Utilizziamo i sistemi di pagamento piu' sicuri al mondo: PayPal e Stripe." }
+        },
+        {
+          "@type": "Question",
+          "name": "Lavoro tutto il giorno, come faccio?",
+          "acceptedAnswer": { "@type": "Answer", "text": "I nostri corsi sono stati progettati appositamente per i professionisti che lavorano tutto il giorno e hanno poco tempo. Puoi studiare e fare gli esercizi quando vuoi, non ci sono scadenze, e i mentor ti supporteranno sempre." }
+        },
+        {
+          "@type": "Question",
+          "name": "Come funziona il supporto al placement?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Dopo aver finito il corso e ottenuto la certificazione, ti aiuteremo a costruire il tuo portfolio online e a metterti in contatto con le aziende partner. Avrai anche un supporto pre-colloquio per prepararti al meglio." }
+        },
+        {
+          "@type": "Question",
+          "name": "Ho bisogno di esperienza precedente?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. I nostri corsi partono dalle basi e sono adatti sia a principianti che a chi ha gia' esperienza nel settore. Il mentor adattera' il percorso al tuo livello." }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso iniziare subito?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Si. Dopo l'acquisto avrai accesso immediato a tutti i materiali del corso e potrai prenotare la prima chiamata con il tuo mentor. Non ci sono date di inizio fisse." }
+        }
+      ]
+    }
+  ]
+  </script>
 </head>
 <body class="bg-white text-gray-700 antialiased">
 
@@ -147,6 +353,7 @@
     </div>
   </header>
 
+  <main>
 
   <!-- ============================================ -->
   <!-- HERO -->
@@ -203,7 +410,7 @@
 
         <!-- Visual -->
         <div class="lg:col-span-2 fade-up">
-          <img src="assets/group-hero.png" alt="Studentessa laureata EULE Institute con dashboard corsi, video call mentor e progressi" class="w-full max-w-md lg:max-w-none mx-auto drop-shadow-2xl" width="695" height="672">
+          <img src="assets/group-hero.png" alt="Studentessa laureata EULE Institute con dashboard corsi, video call mentor e progressi" class="w-full max-w-md lg:max-w-none mx-auto drop-shadow-2xl" width="695" height="672" fetchpriority="high">
         </div>
       </div>
     </div>
@@ -346,7 +553,7 @@
 
         <!-- User Research -->
         <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="design">
-          <img src="assets/corso-user-research.png" alt="Corso User Research" class="w-full h-auto" loading="lazy">
+          <img src="assets/corso-user-research.png" alt="Corso User Research Design online certificato con mentor - EULE Institute" class="w-full h-auto" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
             <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">User Research Design</h4>
@@ -364,7 +571,7 @@
 
         <!-- Interaction Design -->
         <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="design">
-          <img src="assets/corso-interaction-design.png" alt="Corso Interaction Design" class="w-full h-auto" loading="lazy">
+          <img src="assets/corso-interaction-design.png" alt="Corso Interaction Design online con wireframe e prototipazione - EULE Institute" class="w-full h-auto" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
             <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Interaction Design</h4>
@@ -382,7 +589,7 @@
 
         <!-- Visual / UI Design -->
         <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="design">
-          <img src="assets/corso-visual-ui.png" alt="Corso Visual e UI Design" class="w-full h-auto" loading="lazy">
+          <img src="assets/corso-visual-ui.png" alt="Corso Visual e UI Design online con design system e Figma - EULE Institute" class="w-full h-auto" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
             <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Visual e UI Design</h4>
@@ -400,7 +607,7 @@
 
         <!-- UX Writing -->
         <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="design">
-          <img src="assets/corso-ux-writing.png" alt="Corso UX Writing" class="w-full h-auto" loading="lazy">
+          <img src="assets/corso-ux-writing.png" alt="Corso UX Writing e Microcopy online con mentor certificato - EULE Institute" class="w-full h-auto" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
             <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">UX Writing &amp; Microcopy</h4>
@@ -418,7 +625,7 @@
 
         <!-- Figma -->
         <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="design">
-          <img src="assets/corso-figma.png" alt="Corso Figma per UI Designer" class="w-full h-auto" loading="lazy">
+          <img src="assets/corso-figma.png" alt="Corso Figma per UI Designer online: componenti, auto-layout e prototipi - EULE Institute" class="w-full h-auto" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-golden-dark bg-golden/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Design</span>
             <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Figma per UI Designer</h4>
@@ -436,7 +643,7 @@
 
         <!-- HTML & CSS -->
         <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="it">
-          <img src="assets/html-css.png" alt="Corso HTML e CSS per Webdesign" class="w-full h-auto" loading="lazy">
+          <img src="assets/html-css.png" alt="Corso HTML e CSS per Webdesign online con Flexbox e Grid - EULE Institute" class="w-full h-auto" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-teal bg-teal/10 px-3 py-1 rounded-full w-fit mb-3">Percorso IT</span>
             <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">HTML e CSS per Webdesign</h4>
@@ -454,7 +661,7 @@
 
         <!-- Project Management -->
         <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="it">
-          <img src="assets/management.png" alt="Corso Project Management" class="w-full h-auto" loading="lazy">
+          <img src="assets/management.png" alt="Corso Project Management online Agile Scrum certificato - EULE Institute" class="w-full h-auto" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-teal bg-teal/10 px-3 py-1 rounded-full w-fit mb-3">Percorso IT</span>
             <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Project Management</h4>
@@ -472,7 +679,7 @@
 
         <!-- Interior Design -->
         <div class="course-card bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 fade-up flex flex-col" data-track="architettura">
-          <img src="assets/interior-design-1.png" alt="Corso Interior Design Online" class="w-full h-auto" loading="lazy">
+          <img src="assets/interior-design-1.png" alt="Corso Interior Design Online con render 3D e progettazione d'interni - EULE Institute" class="w-full h-auto" loading="lazy">
           <div class="p-5 flex flex-col flex-1">
             <span class="inline-block text-xs font-semibold text-deep-blue bg-deep-blue/10 px-3 py-1 rounded-full w-fit mb-3">Percorso Architettura</span>
             <h4 class="font-heading font-bold text-deep-blue text-lg mb-2">Interior Design Online</h4>
@@ -1035,6 +1242,8 @@
     </div>
   </section>
 
+
+  </main>
 
   <!-- ============================================ -->
   <!-- FOOTER -->
